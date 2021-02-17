@@ -1,6 +1,6 @@
 using System;
 
-namespace CarsAPI
+namespace WebAPI
 {
     public class WeatherForecast
     {
