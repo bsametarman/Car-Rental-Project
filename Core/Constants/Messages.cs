@@ -14,6 +14,10 @@ namespace Core.Constants
         public static string InvalidName = "Ürün İsmi Geçersiz..!";
         public static string MaintenanceTime = "Bakım Zamanı..!";
         public static string ProductListed = "Ürünler Listelendi..!";
-        public static string CarImageLimitExceed = "Resim Limit Aşıldı!";
+        public static string CarImageCarIdInvalid = "Yanlış Araç Id.";
+        public static string CarImageDeleted = "Başarıyla Silindi!";
+        public static string CarImageUpdated = "Başarıyla Güncellendi!";
+        public static string CarImageLimitExceed = "Araç Resim Adedi Aşıldı!";
+        public static string CarImageAdded = "Başarıyla Eklendi!";
     }
 }

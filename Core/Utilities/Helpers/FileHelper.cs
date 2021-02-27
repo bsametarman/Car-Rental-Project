@@ -10,16 +10,16 @@ namespace Core.Utilities.Helpers
     {
         public static string Add(IFormFile file)
         {
-            var sourcepath = Path.GetTempFileName();
+            var sourcepath = Path.GetTempFileName(); //yeni dosya oluşturuyor ve dosya yolunu döndürüyor
             if (file.Length > 0)
             {
                 using (var stream = new FileStream(sourcepath, FileMode.Create))
                 {
-                    file.CopyTo(stream);
+                    file.CopyTo(stream); //hedef sisteme dosya içeriğini kopyalıyor
                 }
             }
             var result = newPath(file);
-            File.Move(sourcepath, result);
+            File.Move(sourcepath, result); //taşınacak doysa adı, taşınan dosya için yeni yol ve isim.
             return result;
         }
 
@@ -43,10 +43,10 @@ namespace Core.Utilities.Helpers
         }
         public static string newPath(IFormFile file)
         {
-            FileInfo ff = new FileInfo(file.FileName);
-            string fileExtension = ff.Extension;
+            FileInfo ff = new FileInfo(file.FileName); // dosya yolunu kapsıyor
+            string fileExtension = ff.Extension; //dosya uzantılarını temsil ediyor
 
-            string path = Environment.CurrentDirectory + @"\Images";
+            string path = Environment.CurrentDirectory + @"\Images\"; //çalışılan dosya yolunu alır veya set eder
             var newPath = Guid.NewGuid().ToString() + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + "_" + DateTime.Now.Year + fileExtension;
 
             string result = $@"{path}\{newPath}";
